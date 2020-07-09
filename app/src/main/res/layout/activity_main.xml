@@ -22,6 +22,7 @@
             android:hint="email"
             android:inputType="textEmailAddress"
             android:text="@={loginViewmodel.email}"
+            app:error="@{loginViewmodel.errorMsg}"
             android:layout_marginTop="60dp"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp">
@@ -41,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:text="@={loginViewmodel.pwd}"
+                app:error="@{loginViewmodel.errorMsg}"
                 android:hint="password">
             </com.google.android.material.textfield.TextInputEditText>
 
@@ -52,7 +54,7 @@
             android:layout_height="wrap_content"
             style="@style/ButtonTheme"
             android:text="@string/app_name"
-            android:onClick="@{()->loginViewmodel.onLoginClicked(emailEdittext,passwordEdittext)}"
+            android:onClick="@{()->loginViewmodel.onLoginClicked()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
