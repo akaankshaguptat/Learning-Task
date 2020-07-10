@@ -6,11 +6,14 @@ import androidx.databinding.BindingAdapter
 import androidx.lifecycle.MutableLiveData
 import com.google.android.material.textfield.TextInputEditText
 
-@BindingAdapter("error")
-fun bindingError(textInputEditText: TextInputEditText, errMsg:String){
-    if(errMsg!=""){
-        textInputEditText.setError(errMsg)
-    }
+@BindingAdapter("errorEmail")
+fun bindingErrorEmail(textInputEditText: TextInputEditText, errMsg:String?) {
+    textInputEditText.error = errMsg
+}
+@BindingAdapter("errorPwd")
+fun bindingErrorPwd(textInputEditText: TextInputEditText, errMsg:String?){
+    textInputEditText.error = errMsg
+
 
 
 
